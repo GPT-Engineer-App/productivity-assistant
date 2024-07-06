@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
+import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users, ShoppingCart } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/sidebar"; // Use the sidebar layout
 import Index from "./pages/Index.jsx";
@@ -14,6 +14,10 @@ import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import Onboarding from "./pages/Onboarding.jsx";
 import PartnerPairing from "./pages/PartnerPairing.jsx";
+import ShoppingLists from "./pages/ShoppingLists.jsx";
+import ShoppingList from "./pages/ShoppingList.jsx";
+import NewShoppingList from "./pages/NewShoppingList.jsx";
+import InviteToShoppingList from "./pages/InviteToShoppingList.jsx";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +67,11 @@ export const navItems = [
     to: "/partner-pairing",
     icon: <Users className="h-4 w-4" />,
   },
+  {
+    title: "Shopping Lists",
+    to: "/shopping-lists",
+    icon: <ShoppingCart className="h-4 w-4" />,
+  },
 ];
 
 const App = () => {
@@ -82,6 +91,10 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="partner-pairing" element={<PartnerPairing />} />
+              <Route path="shopping-lists" element={<ShoppingLists />} />
+              <Route path="shopping-lists/new" element={<NewShoppingList />} />
+              <Route path="shopping-lists/:id" element={<ShoppingList />} />
+              <Route path="shopping-lists/:id/invite" element={<InviteToShoppingList />} />
             </Route>
           </Routes>
         </Router>
