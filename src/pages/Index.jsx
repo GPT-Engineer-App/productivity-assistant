@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { sendInventoryDataToWebhook } from "@/utils/webhook";
+import { sendInventoryDataToWebhook } from "../utils/webhook";
 
 const Index = () => {
   useEffect(() => {
