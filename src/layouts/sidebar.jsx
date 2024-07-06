@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2, Home, CheckSquare, Calendar, FileText, Settings, UserPlus, User, BookOpen, Users, Plane } from "lucide-react";
+import { CircleUser, Menu, Package2, Home, CheckSquare, Calendar, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const navItems = [
@@ -58,11 +58,7 @@ const navItems = [
     to: "/partner-pairing",
     icon: <Users className="h-4 w-4" />,
   },
-  {
-    title: "Trip Planner",
-    to: "/trip-planner",
-    icon: <Plane className="h-4 w-4" />,
-  },
+  
 ];
 
 const Layout = () => {
