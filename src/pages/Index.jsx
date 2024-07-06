@@ -45,6 +45,7 @@ const Index = () => {
 
     fetchDataAndSendToWebhook();
   }, []);
+
   return (
     <div className="text-center">
       <h1 className="text-3xl">Your Blank Canvas</h1>
