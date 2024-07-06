@@ -54,8 +54,8 @@ const navItems = [
     icon: <BookOpen className="h-4 w-4" />,
   },
   {
-    title: "Partner Pairing",
-    to: "/partner-pairing",
+    title: "Collaborative Project Space",
+    to: "/collaborative-project-space",
     icon: <Users className="h-4 w-4" />,
   },
 ];

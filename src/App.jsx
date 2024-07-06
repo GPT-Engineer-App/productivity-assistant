@@ -14,6 +14,7 @@ import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import Onboarding from "./pages/Onboarding.jsx";
 import PartnerPairing from "./pages/PartnerPairing.jsx";
+import CollaborativeProjectSpace from "./pages/CollaborativeProjectSpace.jsx";
 
 const queryClient = new QueryClient();
 
@@ -82,6 +83,7 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="partner-pairing" element={<PartnerPairing />} />
+              <Route path="collaborative-project-space" element={<CollaborativeProjectSpace />} />
             </Route>
           </Routes>
         </Router>
