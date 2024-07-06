@@ -13,15 +13,6 @@ import { CircleUser, Menu, Package2, Gift } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
-const navItems = [
-  // ... other nav items
-  {
-    title: "E-Gift",
-    to: "/e-gift",
-    icon: <Gift className="h-4 w-4" />,
-  },
-];
-
 const Layout = () => {
   return (
     <div className="flex min-h-screen w-full flex-col">
@@ -46,7 +37,11 @@ const DesktopNav = () => (
       <Package2 className="h-6 w-6" />
       <span className="sr-only">Acme Inc</span>
     </NavItem>
-    {navItems.map((item) => (
+    {navItems.concat({
+      title: "E-Gift",
+      to: "/e-gift",
+      icon: <Gift className="h-4 w-4" />,
+    }).map((item) => (
       <NavItem key={item.to} to={item.to}>
         {item.title}
       </NavItem>
@@ -71,7 +66,11 @@ const MobileNav = () => (
           <Package2 className="h-6 w-6" />
           <span className="sr-only">Acme Inc</span>
         </NavItem>
-        {navItems.map((item) => (
+        {navItems.concat({
+          title: "E-Gift",
+          to: "/e-gift",
+          icon: <Gift className="h-4 w-4" />,
+        }).map((item) => (
           <NavItem key={item.to} to={item.to}>
             {item.title}
           </NavItem>
