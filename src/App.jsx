@@ -14,6 +14,10 @@ import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import Onboarding from "./pages/Onboarding.jsx";
 import PartnerPairing from "./pages/PartnerPairing.jsx";
+import ShoppingLists from "./pages/ShoppingLists.jsx";
+import ShoppingList from "./pages/ShoppingList.jsx";
+import NewShoppingList from "./pages/NewShoppingList.jsx";
+import InviteUser from "./pages/InviteUser.jsx";
 
 const queryClient = new QueryClient();
 
@@ -82,6 +86,10 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="partner-pairing" element={<PartnerPairing />} />
+              <Route path="shopping-lists" element={<ShoppingLists />} />
+              <Route path="shopping-lists/new" element={<NewShoppingList />} />
+              <Route path="shopping-lists/:id" element={<ShoppingList />} />
+              <Route path="shopping-lists/:id/invite" element={<InviteUser />} />
             </Route>
           </Routes>
         </Router>
