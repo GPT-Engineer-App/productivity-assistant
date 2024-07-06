@@ -9,9 +9,60 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu, Package2, Home, CheckSquare, Calendar, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+const navItems = [
+  {
+    title: "Dashboard",
+    to: "/",
+    icon: <Home className="h-4 w-4" />,
+  },
+  {
+    title: "Tasks",
+    to: "/tasks",
+    icon: <CheckSquare className="h-4 w-4" />,
+  },
+  {
+    title: "Calendar",
+    to: "/calendar",
+    icon: <Calendar className="h-4 w-4" />,
+  },
+  {
+    title: "Notes",
+    to: "/notes",
+    icon: <FileText className="h-4 w-4" />,
+  },
+  {
+    title: "Settings",
+    to: "/settings",
+    icon: <Settings className="h-4 w-4" />,
+  },
+  {
+    title: "Register",
+    to: "/register",
+    icon: <UserPlus className="h-4 w-4" />,
+  },
+  {
+    title: "Profile",
+    to: "/profile",
+    icon: <User className="h-4 w-4" />,
+  },
+  {
+    title: "Onboarding",
+    to: "/onboarding",
+    icon: <BookOpen className="h-4 w-4" />,
+  },
+  {
+    title: "Partner Pairing",
+    to: "/partner-pairing",
+    icon: <Users className="h-4 w-4" />,
+  },
+  {
+    title: "Bar Inventory",
+    to: "/bar-inventory",
+    icon: <Users className="h-4 w-4" />,
+  },
+];
 
 const Layout = () => {
   return (
@@ -38,7 +89,8 @@ const DesktopNav = () => (
       <span className="sr-only">Acme Inc</span>
     </NavItem>
     {navItems.map((item) => (
-      <NavItem key={item.to} to={item.to}>
+      <NavItem key={item.to} to={item.to} className="flex items-center gap-2">
+        {item.icon}
         {item.title}
       </NavItem>
     ))}
@@ -63,7 +115,8 @@ const MobileNav = () => (
           <span className="sr-only">Acme Inc</span>
         </NavItem>
         {navItems.map((item) => (
-          <NavItem key={item.to} to={item.to}>
+          <NavItem key={item.to} to={item.to} className="flex items-center gap-2">
+            {item.icon}
             {item.title}
           </NavItem>
         ))}

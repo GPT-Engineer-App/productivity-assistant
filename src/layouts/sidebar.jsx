@@ -58,6 +58,11 @@ const navItems = [
     to: "/partner-pairing",
     icon: <Users className="h-4 w-4" />,
   },
+  {
+    title: "Bar Inventory",
+    to: "/bar-inventory",
+    icon: <Users className="h-4 w-4" />,
+  },
 ];
 
 const Layout = () => {
