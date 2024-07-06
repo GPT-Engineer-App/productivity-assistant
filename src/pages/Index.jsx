@@ -16,8 +16,8 @@ const Index = () => {
 
   return (
     <div className="text-center">
-      <h1 className="text-3xl">Your Blank Canvas</h1>
-      <p>Chat with the agent to start making edits.</p>
+      <h1 className="text-3xl">Welcome to the Bar Inventory System</h1>
+      <p>Data is being sent to the webhook for configuration.</p>
     </div>
   );
 };
