@@ -5,14 +5,28 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+const eventSchema = z.object({
+  title: z.string().min(1, "Title is required"),
+  date: z.string().min(1, "Date is required"),
+  time: z.string().min(1, "Time is required"),
+  reminder: z.string().optional(),
+  notification: z.string().optional(),
+  partnerEmail: z.string().email("Invalid email address").optional(),
+});
 
 const CalendarPage = () => {
   const [events, setEvents] = useState([]);
-  const [newEvent, setNewEvent] = useState({ title: "", date: "", time: "" });
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({
+    resolver: zodResolver(eventSchema),
+  });
 
-  const handleAddEvent = () => {
-    setEvents([...events, newEvent]);
-    setNewEvent({ title: "", date: "", time: "" });
+  const handleAddEvent = (data) => {
+    setEvents([...events, data]);
+    reset();
     toast.success("Event added successfully!");
   };
 
@@ -28,35 +42,37 @@ const CalendarPage = () => {
           <DialogHeader>
             <DialogTitle>Add New Event</DialogTitle>
           </DialogHeader>
-          <div className="space-y-4">
+          <form onSubmit={handleSubmit(handleAddEvent)} className="space-y-4">
             <div>
               <Label htmlFor="title">Event Title</Label>
-              <Input
-                id="title"
-                value={newEvent.title}
-                onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-              />
+              <Input id="title" {...register("title")} />
+              {errors.title && <p className="text-red-500">{errors.title.message}</p>}
             </div>
             <div>
               <Label htmlFor="date">Event Date</Label>
-              <Input
-                id="date"
-                type="date"
-                value={newEvent.date}
-                onChange={(e) => setNewEvent({ ...newEvent, date: e.target.value })}
-              />
+              <Input id="date" type="date" {...register("date")} />
+              {errors.date && <p className="text-red-500">{errors.date.message}</p>}
             </div>
             <div>
               <Label htmlFor="time">Event Time</Label>
-              <Input
-                id="time"
-                type="time"
-                value={newEvent.time}
-                onChange={(e) => setNewEvent({ ...newEvent, time: e.target.value })}
-              />
+              <Input id="time" type="time" {...register("time")} />
+              {errors.time && <p className="text-red-500">{errors.time.message}</p>}
             </div>
-            <Button onClick={handleAddEvent}>Add Event</Button>
-          </div>
+            <div>
+              <Label htmlFor="reminder">Reminder</Label>
+              <Input id="reminder" type="text" placeholder="e.g., 10 minutes before" {...register("reminder")} />
+            </div>
+            <div>
+              <Label htmlFor="notification">Notification</Label>
+              <Input id="notification" type="text" placeholder="e.g., Email, Push" {...register("notification")} />
+            </div>
+            <div>
+              <Label htmlFor="partnerEmail">Partner's Email</Label>
+              <Input id="partnerEmail" type="email" {...register("partnerEmail")} />
+              {errors.partnerEmail && <p className="text-red-500">{errors.partnerEmail.message}</p>}
+            </div>
+            <Button type="submit">Add Event</Button>
+          </form>
         </DialogContent>
       </Dialog>
     </div>
