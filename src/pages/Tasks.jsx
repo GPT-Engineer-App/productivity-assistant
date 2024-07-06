@@ -15,7 +15,7 @@ const Tasks = () => {
         </div>
         <div className="flex items-center space-x-2">
           <Checkbox id="task-3" />
-          <label htmlFor "task-3" className="text-lg">Task 3 - Due Date</label>
+          <label htmlFor="task-3" className="text-lg">Task 3 - Due Date</label>
         </div>
       </div>
     </div>
