@@ -1,6 +1,19 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React, { useEffect } from "react";
+import { pushDataToWebhook } from "../utils/pushDataToWebhook";
 
 const Index = () => {
+  useEffect(() => {
+    const sampleData = {
+      barInventory: [
+        { item: "Vodka", quantity: 10 },
+        { item: "Gin", quantity: 15 },
+        { item: "Rum", quantity: 8 },
+      ],
+    };
+
+    pushDataToWebhook(sampleData);
+  }, []);
+
   return (
     <div className="text-center">
       <h1 className="text-3xl">Your Blank Canvas</h1>
