@@ -1,10 +1,14 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="text-center">
-      <h1 className="text-3xl">Your Blank Canvas</h1>
-      <p>Chat with the agent to start making edits.</p>
+    <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
+      <h1 className="text-4xl font-bold">Welcome to Our App!</h1>
+      <p className="text-lg">Get started by exploring our features.</p>
+      <Button onClick={() => navigate("/e-gift")}>Go to E-Gift</Button>
     </div>
   );
 };
