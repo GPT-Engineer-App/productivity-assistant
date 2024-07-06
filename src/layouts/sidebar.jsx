@@ -11,6 +11,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { CircleUser, Menu, Package2, Home, CheckSquare, Calendar, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
+import { Image } from "react-icons/fa";
 
 const navItems = [
   {
@@ -57,6 +58,11 @@ const navItems = [
     title: "Partner Pairing",
     to: "/partner-pairing",
     icon: <Users className="h-4 w-4" />,
+  },
+  {
+    title: "Media",
+    to: "/media",
+    icon: <Image className="h-4 w-4" />,
   },
 ];
 
