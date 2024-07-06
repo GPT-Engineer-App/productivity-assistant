@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2, Home, CheckSquare, Calendar, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
+import { CircleUser, Menu, Package2, Home, CheckSquare, Calendar, FileText, Settings, UserPlus, User, BookOpen, Users, MessageSquare } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const navItems = [
@@ -57,6 +57,11 @@ const navItems = [
     title: "Partner Pairing",
     to: "/partner-pairing",
     icon: <Users className="h-4 w-4" />,
+  },
+  {
+    title: "AI Assistant",
+    to: "/ai-assistant",
+    icon: <MessageSquare className="h-4 w-4" />,
   },
 ];
 
