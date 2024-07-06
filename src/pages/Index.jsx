@@ -1,10 +1,22 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
-    <div className="text-center">
-      <h1 className="text-3xl">Your Blank Canvas</h1>
-      <p>Chat with the agent to start making edits.</p>
+    <div className="flex flex-col items-center justify-center min-h-screen space-y-4">
+      <h1 className="text-3xl font-bold">Welcome to the Calendar and Event Management App</h1>
+      <p className="text-lg">Manage your events, schedule video calls, and set reminders with ease.</p>
+      <div className="space-x-4">
+        <Button onClick={() => handleNavigate("/calendar")}>Go to Calendar</Button>
+        <Button onClick={() => handleNavigate("/tasks")}>Go to Tasks</Button>
+        <Button onClick={() => handleNavigate("/notes")}>Go to Notes</Button>
+      </div>
     </div>
   );
 };
