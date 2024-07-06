@@ -1,6 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    const fetchDataAndSendToWebhook = async () => {
+      const sampleData = {
+        name: "Sample Item",
+        quantity: 10,
+        price: 19.99,
+      };
+
+      try {
+        const response = await fetch("https://hooks.zapier.com/hooks/catch/16946926/23infqp/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(sampleData),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+
+        console.log("Data sent successfully:", sampleData);
+      } catch (error) {
+        console.error("Failed to send data:", error);
+      }
+    };
+
+    fetchDataAndSendToWebhook();
+  }, []);
+
   return (
     <div className="text-center">
       <h1 className="text-3xl">Your Blank Canvas</h1>
