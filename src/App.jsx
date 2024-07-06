@@ -1,7 +1,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
+import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users, Gift } from "lucide-react";
+import EGift from "./pages/EGift.jsx";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/sidebar"; // Use the sidebar layout
 import Index from "./pages/Index.jsx";
@@ -63,6 +64,11 @@ export const navItems = [
     to: "/partner-pairing",
     icon: <Users className="h-4 w-4" />,
   },
+  {
+    title: "E-Gift",
+    to: "/e-gift",
+    icon: <Gift className="h-4 w-4" />,
+  },
 ];
 
 const App = () => {
@@ -82,6 +88,7 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="partner-pairing" element={<PartnerPairing />} />
+              <Route path="e-gift" element={<EGift />} />
             </Route>
           </Routes>
         </Router>
