@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
+import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users, Image, MapPin, Bookmark } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/sidebar"; // Use the sidebar layout
 import Index from "./pages/Index.jsx";
@@ -14,6 +14,10 @@ import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import Onboarding from "./pages/Onboarding.jsx";
 import PartnerPairing from "./pages/PartnerPairing.jsx";
+import MediaUpload from "./pages/MediaUpload.jsx";
+import DigitalAlbums from "./pages/DigitalAlbums.jsx";
+import VirtualTours from "./pages/VirtualTours.jsx";
+import TourBookmarks from "./pages/TourBookmarks.jsx";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +67,26 @@ export const navItems = [
     to: "/partner-pairing",
     icon: <Users className="h-4 w-4" />,
   },
+  {
+    title: "Media Upload",
+    to: "/media-upload",
+    icon: <Image className="h-4 w-4" />,
+  },
+  {
+    title: "Digital Albums",
+    to: "/digital-albums",
+    icon: <BookOpen className="h-4 w-4" />,
+  },
+  {
+    title: "Virtual Tours",
+    to: "/virtual-tours",
+    icon: <MapPin className="h-4 w-4" />,
+  },
+  {
+    title: "Tour Bookmarks",
+    to: "/tour-bookmarks",
+    icon: <Bookmark className="h-4 w-4" />,
+  },
 ];
 
 const App = () => {
@@ -82,6 +106,10 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="partner-pairing" element={<PartnerPairing />} />
+              <Route path="media-upload" element={<MediaUpload />} />
+              <Route path="digital-albums" element={<DigitalAlbums />} />
+              <Route path="virtual-tours" element={<VirtualTours />} />
+              <Route path="tour-bookmarks" element={<TourBookmarks />} />
             </Route>
           </Routes>
         </Router>
