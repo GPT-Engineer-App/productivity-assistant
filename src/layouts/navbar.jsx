@@ -9,9 +9,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { Gift, Package2, Menu, CircleUser } from "lucide-react"; // Ensure Gift is imported
+import { Gift, Package2, Menu, CircleUser } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems as existingNavItems } from "../App"; // Import existing navItems
+import { navItems as existingNavItems } from "../App";
 
 const navItems = existingNavItems.concat({
   title: "E-Gift",
