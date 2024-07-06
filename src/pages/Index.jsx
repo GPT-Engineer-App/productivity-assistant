@@ -1,6 +1,11 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import { sendInventoryDataToWebhook } from "@/utils/webhook";
 
 const Index = () => {
+  useEffect(() => {
+    sendInventoryDataToWebhook();
+  }, []);
+
   return (
     <div className="text-center">
       <h1 className="text-3xl">Your Blank Canvas</h1>
