@@ -14,6 +14,9 @@ import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import Onboarding from "./pages/Onboarding.jsx";
 import PartnerPairing from "./pages/PartnerPairing.jsx";
+import DailyRoutines from "./pages/DailyRoutines.jsx";
+import TaskManagement from "./pages/TaskManagement.jsx";
+import Timeline from "./pages/Timeline.jsx";
 
 const queryClient = new QueryClient();
 
@@ -82,6 +85,9 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="partner-pairing" element={<PartnerPairing />} />
+              <Route path="daily-routines" element={<DailyRoutines />} />
+              <Route path="task-management" element={<TaskManagement />} />
+              <Route path="timeline" element={<Timeline />} />
             </Route>
           </Routes>
         </Router>

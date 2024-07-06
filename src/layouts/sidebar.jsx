@@ -19,13 +19,18 @@ const navItems = [
     icon: <Home className="h-4 w-4" />,
   },
   {
-    title: "Tasks",
-    to: "/tasks",
+    title: "Daily Routines",
+    to: "/daily-routines",
     icon: <CheckSquare className="h-4 w-4" />,
   },
   {
-    title: "Calendar",
-    to: "/calendar",
+    title: "Task Management",
+    to: "/task-management",
+    icon: <CheckSquare className="h-4 w-4" />,
+  },
+  {
+    title: "Timeline",
+    to: "/timeline",
     icon: <Calendar className="h-4 w-4" />,
   },
   {
