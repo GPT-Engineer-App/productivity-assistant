@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
+import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users, Folder } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/sidebar"; // Use the sidebar layout
 import Index from "./pages/Index.jsx";
@@ -14,6 +14,9 @@ import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import Onboarding from "./pages/Onboarding.jsx";
 import PartnerPairing from "./pages/PartnerPairing.jsx";
+import Projects from "./pages/Projects.jsx";
+import ProjectDetail from "./pages/ProjectDetail.jsx";
+import TaskDetail from "./pages/TaskDetail.jsx";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +25,11 @@ export const navItems = [
     title: "Dashboard",
     to: "/",
     icon: <Home className="h-4 w-4" />,
+  },
+  {
+    title: "Projects",
+    to: "/projects",
+    icon: <Folder className="h-4 w-4" />,
   },
   {
     title: "Tasks",
@@ -74,7 +82,10 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Dashboard />} />
+              <Route path="projects" element={<Projects />} />
+              <Route path="projects/:projectId" element={<ProjectDetail />} />
               <Route path="tasks" element={<Tasks />} />
+              <Route path="tasks/:taskId" element={<TaskDetail />} />
               <Route path="calendar" element={<CalendarPage />} />
               <Route path="notes" element={<Notes />} />
               <Route path="settings" element={<SettingsPage />} />
