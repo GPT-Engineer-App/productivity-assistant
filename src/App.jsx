@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users } from "lucide-react";
+import { Home, Calendar, CheckSquare, FileText, Settings, UserPlus, User, BookOpen, Users, BarInventory } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/sidebar"; // Use the sidebar layout
 import Index from "./pages/Index.jsx";
@@ -63,6 +63,11 @@ export const navItems = [
     title: "Partner Pairing",
     to: "/partner-pairing",
     icon: <Users className="h-4 w-4" />,
+  },
+  {
+    title: "Bar Inventory",
+    to: "/bar-inventory",
+    icon: <BarInventory className="h-4 w-4" />,
   },
 ];
 
