@@ -67,6 +67,24 @@ const CalendarPage = () => {
           </div>
         ))}
       </div>
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold">Google Calendar and iCal Integration</h2>
+        <Button>Sync with Google Calendar</Button>
+        <Button>Sync with iCal</Button>
+      </div>
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold">Schedule Video Calls</h2>
+        <Button>Schedule Video Call</Button>
+      </div>
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold">Customizable Reminders and Notifications</h2>
+        <Button>Set Reminders</Button>
+        <Button>Set Notifications</Button>
+      </div>
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold">Share Events with Partner</h2>
+        <Button>Share Event</Button>
+      </div>
     </div>
   );
 };
