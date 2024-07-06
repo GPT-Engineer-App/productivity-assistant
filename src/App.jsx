@@ -24,7 +24,7 @@ const queryClient = new QueryClient();
 export const navItems = [
   {
     title: "Dashboard",
-    to: "/",
+    to: "/dashboard",
     icon: <Home className="h-4 w-4" />,
   },
   {
@@ -97,7 +97,8 @@ const App = () => {
         <Router>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<Dashboard />} />
+              <Route index element={<Index />} />
+              <Route path="dashboard" element={<Dashboard />} />
               <Route path="tasks" element={<Tasks />} />
               <Route path="calendar" element={<CalendarPage />} />
               <Route path="notes" element={<Notes />} />

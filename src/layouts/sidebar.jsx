@@ -15,7 +15,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const navItems = [
   {
     title: "Dashboard",
-    to: "/",
+    to: "/dashboard",
     icon: <Home className="h-4 w-4" />,
   },
   {
