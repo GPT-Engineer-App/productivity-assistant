@@ -14,6 +14,7 @@ import Register from "./pages/Register.jsx";
 import Profile from "./pages/Profile.jsx";
 import Onboarding from "./pages/Onboarding.jsx";
 import PartnerPairing from "./pages/PartnerPairing.jsx";
+import BarInventory from "./pages/BarInventory.jsx";
 
 const queryClient = new QueryClient();
 
@@ -82,6 +83,7 @@ const App = () => {
               <Route path="profile" element={<Profile />} />
               <Route path="onboarding" element={<Onboarding />} />
               <Route path="partner-pairing" element={<PartnerPairing />} />
+              <Route path="bar-inventory" element={<BarInventory />} />
             </Route>
           </Routes>
         </Router>
