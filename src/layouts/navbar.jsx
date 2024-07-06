@@ -11,7 +11,13 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { Gift, Package2, Menu, CircleUser } from "lucide-react"; // Ensure Gift is imported
 import { NavLink, Outlet } from "react-router-dom";
+import { navItems as existingNavItems } from "../App"; // Import existing navItems
 
+const navItems = existingNavItems.concat({
+  title: "E-Gift",
+  to: "/e-gift",
+  icon: <Gift className="h-4 w-4" />,
+});
 
 const Layout = () => {
   return (
