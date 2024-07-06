@@ -24,7 +24,7 @@ const queryClient = new QueryClient();
 export const navItems = [
   {
     title: "Dashboard",
-    to: "/dashboard",
+    to: "/",
     icon: <Home className="h-4 w-4" />,
   },
   {
